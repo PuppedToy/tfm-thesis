@@ -119,24 +119,24 @@
 % an der passenden Stelle im Fließtext erzwungen werden.
 
 \listoffigures
-\listoftables
+% \listoftables
 
 %Wird nur bei Verwendung von der lstlisting-Umgebung mit dem "caption"-Parameter benoetigt
-%\lstlistoflistings 
+%\lstlistoflistings
 %ansonsten:
-\ifdeutsch
-  \listof{Listing}{Verzeichnis der Listings}
-\else
-  \listof{Listing}{List of Listings}
-\fi
+% \ifdeutsch
+%   \listof{Listing}{Verzeichnis der Listings}
+% \else
+%   \listof{Listing}{List of Listings}
+% \fi
 
 %mittels \newfloat wurde die Algorithmus-Gleitumgebung definiert.
 %Mit folgendem Befehl werden alle floats dieses Typs ausgegeben
-\ifdeutsch
-  \listof{Algorithmus}{Verzeichnis der Algorithmen}
-\else
-  \listof{Algorithmus}{List of Algorithms}
-\fi
+% \ifdeutsch
+%   \listof{Algorithmus}{Verzeichnis der Algorithmen}
+% \else
+%   \listof{Algorithmus}{List of Algorithms}
+% \fi
 %\listofalgorithms %Ist nur für Algorithmen, die mittels \begin{algorithm} umschlossen werden, nötig
 
 % Abkürzungsverzeichnis
@@ -204,21 +204,10 @@
 
 \chapter{Introduction}
 
-This thesis tarts with \cref{chap:k2}.
+% \chapter{Chapter Two}
+% \label{chap:k2}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu efficitur dolor. Etiam pellentesque dictum diam, ac ultrices sem hendrerit id. Donec tristique fermentum massa, et viverra elit scelerisque sed. Sed purus odio, tempus a suscipit at, rhoncus sed justo. Proin viverra, lacus nec bibendum fringilla, risus justo iaculis urna, eget molestie arcu mi et purus. Nulla eget nibh eu mauris tincidunt porttitor. Aenean eu lacus scelerisque, faucibus lorem vel, laoreet dolor. Nam sed ultricies magna, eu lacinia enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum posuere tellus sed ex interdum rhoncus. Duis eu ante dolor. In at elit scelerisque, varius mi sit amet, eleifend nisl. Integer metus nulla, viverra vitae justo in, tincidunt ornare nibh. Phasellus feugiat euismod risus vel lobortis. Praesent eu ornare erat, eget congue ante. Donec accumsan, arcu sed porta efficitur, diam massa venenatis sem, quis ultrices risus purus et turpis.
-
-Duis gravida diam quis est congue, vel blandit eros laoreet. Maecenas facilisis scelerisque iaculis. Donec sollicitudin fringilla turpis gravida maximus. Aliquam lacinia malesuada porttitor. Quisque vitae enim id lorem molestie venenatis quis nec turpis. Integer molestie auctor felis, commodo sollicitudin ligula suscipit nec. Suspendisse facilisis venenatis lectus pretium venenatis. Vestibulum eu accumsan libero. Duis consectetur tristique mi. Aliquam nunc felis, volutpat quis sapien vel, maximus porta sem. Morbi pellentesque arcu facilisis massa posuere pulvinar. Aliquam lobortis nisi gravida, interdum leo posuere, sagittis leo. Nulla aliquam mauris ipsum, eu bibendum sem interdum non. Mauris erat orci, sollicitudin ut elit id, tempus viverra nulla. Curabitur sit amet tincidunt orci. Nullam in dolor quam.
-
-Nunc eu vulputate risus. Suspendisse vel ex blandit, viverra erat a, dapibus elit. Etiam blandit lorem sit amet lectus tempor, ac bibendum odio aliquet. Etiam quis magna eu justo sagittis bibendum. Nam elit dolor, tristique ut lobortis sed, cursus ut sapien. Sed malesuada mauris ut lectus condimentum, sit amet tempus erat luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Vestibulum mollis purus nec blandit venenatis. Vestibulum porttitor hendrerit elit, consequat accumsan libero pharetra sit amet. Cras ante sem, hendrerit eget odio id, ultricies auctor sapien. Etiam iaculis tortor augue, ac sagittis enim elementum eget. Suspendisse lorem urna, posuere eu rhoncus ornare, aliquam eu tellus. Proin sed laoreet orci. Proin accumsan et mi at tincidunt. Nulla facilisis sed sem aliquam facilisis.
-
-We can also typeset \verb|<text>verbatim text</text>|.
-Backticks are also rendered correctly: \verb|`words in backticks`|.
-
-\chapter{Chapter Two}
-\label{chap:k2}
-
-LaTeX hints are provided in \cref{chap:latexhints}.
+% LaTeX hints are provided in \cref{chap:latexhints}.
 
 \chapter{Estudio de mercado de las tecnologías disponibles}
 \label{chap:techMarketResearch}
@@ -238,6 +227,7 @@ LaTeX hints are provided in \cref{chap:latexhints}.
 \section{Gestión de paquetes}
 
 \input{package-manager}
+\label{section:packet-manager}
 
 \section{Pruebas unitarias}
 \label{section:unit-testing}
@@ -257,30 +247,37 @@ LaTeX hints are provided in \cref{chap:latexhints}.
 \section{Gestor de Base de Datos}
 
 \input{database-manager}
+\label{section:database-manager}
 
 \section{Capa de datos}
 
 \input{data-layer}
+\label{section:data-layer}
 
 \section{Flujo de despliegue - Integración continua}
 
 \input{ci-cd-flow}
 
-\blinddocument
+\chapter{Desarrollo del marco de trabajo}
+\label{chap:development}
 
-\chapter{Conclusion and Outlook}
-\label{chap:zusfas}
+\section{Funcionamiento general}
+\input{general-working}
 
-\section*{Outlook}
+\chapter{Próximos pasos}
+\label{chap:further-steps}
+
+\chapter{Conclusiones}
 
 \printbibliography
 
-All links were last followed on May 19, 2020.
+Todos los enlaces han sido comprobados el 22 de Febrero de 2020.
+% Todos los enlaces han sido comprobados el May 19, 2020.
 
-\appendix
-\input{latexhints-english}
+% \appendix
+% \input{latexhints-english}
 
 \pagestyle{empty}
 \renewcommand*{\chapterpagestyle}{empty}
-\Versicherung
+% \Versicherung
 \end{document}
