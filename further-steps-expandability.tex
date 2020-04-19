@@ -1,0 +1,18 @@
+Uno de los pasos fundamentales para poder publicar el código abierto es que sea ampliable. Como la idea es que la tarea de ampliar el marco se va a repetir en numerosas ocasiones, se ha planteado la opción de automatizarla en la medida de lo posible. Por tanto, teniendo en cuenta el futuro, he diseñado el proceso de ampliación y las tareas que van a facilitar la tarea. Supongamos que un usuario desea ampliar el código con una tecnología particular -digamos que por ejemplo desea añadir Redis como base de datos- así que se clona el respositorio y se instala las dependencias. Lo ideal sería que ese usuario ejecutase una tarea framework:expand y que, mediante el mismo sistema que utiliza el marco para comenzar un proyecto, le hiciese unas preguntas sobre su ampliación.
+
+Estas preguntas buscarán obtener la siguiente información:
+\begin{enumerate}
+  \item Conocer el nombre de la tecnología a implementar. En este caso Redis
+  \item Conocer el tipo de tecnología a implementar. En este caso Base de datos.
+  \item Conocer qué ficheros implicados ha de poseer el marco, que deberá eliminar si el usuario no elige la tecnología.
+  \item Conocer qué tarea del package.json deberá aplicar al instalar el marco en caso de necesitarla. En este caso particular, el usuario puede querer producir una instancia de la base de datos en su instalación.
+  \item Conocer las opciones con las que se puede utilizar esta tecnología en el marco. Estas opciones serán luego ofrecidas al usuario final durante la fase de preguntas si elige utilizar esta nueva tecnología, Redis, y el resultado de la selección se le pasará a esa tarea de inicialización del package.json para que el usuario desarrollador pueda trabajar con ellas.
+\end{enumerate}
+
+Con toda esta información, el marco será capaz de mantener un registro de los ficheros asociados, podrá pasar pruebas automáticas con distintas configuraciones y podrá actualizar una documentación online sobre las tecnologías disponibles. Todas estas tareas quedan a responsabilidad del propio marco y no del usuario.
+
+Como la intención no es restringir, si no ayudar, esta tarea debe ser una mera inicialización de la nueva tecnología, pero todo debe poder ser editado al vuelo. Por tanto, esta tarea no hará más que generar información en una serie de ficheros que podrán ser editados. Estos ficheros serán la clave de la ampliabilidad, dado que permiten documentar de forma automática el marco y, a la vez, automatizar todas las tareas de instalación.
+
+Por otro lado, el usuario quedará responsable de cumplir los requisitos de cobertura para su tecnología en la aplicación de pruebas "Lista de tareas", generar las tareas automáticas de instalación y mantener los ficheros mencionados en el párrafo anterior. Aun así, una vez el código pasa esas pruebas y está listo para ser subido, requerirá una revisión manual por parte de los encargados del mantenimiento del código, que será un equipo compuesto por personas de confianza que hayan contribuido al código. En la imagen inicial, estas ampliaciones solo requerirán de mi revisión manual.
+
+La idea es que, de forma inicial, la ampliación del código sea lo más sencilla y automática posible. Y que, poco a poco, con contribuciones de distintos desarrolladores, el sistema se vaya cerrando más y quede totalmente automatizado. Todavía no se ha diseñado exactamente qué ficheros van a participar y qué estructura van a tener, pero esto será uno de los pasos requeridos antes de poder publicar el código como abierto.
