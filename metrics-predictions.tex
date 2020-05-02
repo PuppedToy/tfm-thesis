@@ -1,0 +1,39 @@
+Todas las estimaciones que se van a poder ver a continuación han sido realizadas bajo la asumción de que la persona que realiza las tareas domina las tecnologías que está utilizando. Para este proyecto se han estimado los siguientes tiempos sin utilizar el marco de trabajo ni aportando calidad al producto:
+
+\begin{enumerate}
+  \item Servidor: 3 horas
+    \begin{enumerate}
+      \item Montar el servidor (GraphQL y Express): 1 hora
+      \item Añadir tarea: 0.5 hora
+      \item Eliminar tarea: 0.5 hora
+      \item Editar tarea: 0.5 hora
+      \item Marcar tarea: 0.25 horas
+      \item Obtener lista de tareas: 0.25 horas
+    \end{enumerate}
+  \item Cliente: 5.5 horas
+    \begin{enumerate}
+      \item Montar el cliente (Webpack): 2 horas
+      \item Página de lista de tareas: 0.5 horas
+      \item Componente de campo de texto: 0.5 horas
+      \item Componente de botón de borrar tarea: 0.25 horas
+      \item Componente de botón de editar tarea: 0.5 horas
+      \item Componente de tarea: 0.25 horas
+      \item Componente de caja de tareas: 0.25 horas
+      \item Componente de botón de añadir tarea: 0.25 horas
+      \item Integración con el servidor: 1 hora
+    \end{enumerate}
+  \item Subir a producción: 30 minutos
+\end{enumerate}
+
+En total, sin utilizar el marco de trabajo, se estima que se va a tardar 9 horas. En principio, en un día largo de trabajo podría abordarse el proyecto TODO List entero. El marco de trabajo se encargará de ahorrarnos las matesde montar el servidor, montar el cliente y la integración con el servidor. A cambio, nos exigirá un mínimo de cobertura en el código y nos facilitará engancharnos con un servidor de integración contínua. Por tanto, se espera que al utilizar el marco de trabajo el coste del proyecto sin preubas se reduzca en 3.5 horas aproximadamente. A cambio, se esperan los siguientes costes en pruebas:
+
+\begin{enumerate}
+  \item Pruebas unitarias en servidor: 5 horas
+  \item Pruebas unitarias en cliente: 10 horas
+  \item Pruebas de integración: 4 horas
+  \item Pruebas funcionales: 6 horas
+\end{enumerate}
+
+Por tanto, se espera que el proyecto va a costar 32 horas utilizando el marco de trabajo para aportar calidad. Hay que tener en cuenta que, una vez terminado el proyecto con el marco de trabajo, se asume integración contínua y automática con Github, Jenkins, entorno de preproducción y producción. Cuanto más se modifique este proyecto a futuro, más rentable saldrá montar todo este entorno de calidad.
+
+Además de los tiempos, es muy importante medir errores. En un proyecto tan pequeño, se esperan en total 10 errores máximo sin utilizar el marco de trabajo. En el proyecto con marco de trabajo no se espera ningún error.
