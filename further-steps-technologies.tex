@@ -6,10 +6,11 @@ Es evidente que la dirección concreta que va a tomar el marco depende en su tot
 
 Así que, como último apartado de los últimos pasos, será añadir las siguientes tecnologías en el orden propuesto:
 \begin{enumerate}
-  \item Docker: es imprescindible que el marco de soporte a contenedores Docker y, por tanto, esta será la máxima prioridad.
+  \item Docker: es imprescindible que el marco de soporte a contenedores Docker y, por tanto, esta será la máxima prioridad. Esto además tiene grandes repercusiones sobre la integración continua y facilita mucho la tarea del despliegue y el escalado.
   \item Enzyme: numerosos desarrolladores están trabajando con Enzyme en lugar de React Testing Library. Me parece requisito indispensable que acabe entrando dentro del marco como máxima prioridad.
   \item Redis: una base de datos libre que se utiliza en numerosos proyectos.
   \item Vue
   \item AngularJS
   \item Go: esta idea todavía no la tengo clara, dado que todo el marco está en NodeJS. Sin embargo, sería adecuado si otros lenguajes pudiesen ser utilizados en el lado de servidor. Go parece ser la alternativa a NodeJS que más está entrando en el mercado. De todos modos, esta opción queda pendiente a ser evaluada cuando llegue el momento.
+  \item Kubernetes y, en el futuro, otras herramientas de escalado flexible: el objetivo es que el usuario comience su proyecto de forma rápida pero tenga acceso a todas las herramientas de escalado de forma relativamente sencilla. El escalado nunca es una tarea fácil, pero el mundo dispone de herramientas como Kubernetes que, una vez se ha integrado el proyecto con Docker, es más asequible que nuestro proyecto aumente de tamaño sin miedo a perder el control. Kubernetes se encarga de gestionar los distintos nodos que interactuan en nuestro proyecto, generando o eliminando instancias en función de la demanda. Por tanto, para que el marco de trabajo se pueda utilizar de forma profesional, debe haber un soporte adecuado para este tipo de herramientas.
 \end{enumerate}
