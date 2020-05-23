@@ -1,4 +1,8 @@
-Los resultados del experimento se han recogido en la tabla \cref{tab:results}. De momento, queda pendiente pintar gráficas sobre estos datos y sacar conclusiones.
+Los resultados del experimento se han recogido en la tabla \cref{tab:results}. Como se puede observar, todas las tareas han implicado más esfuerzo debido a las pruebas unitarias que se han realizado haciendo el uso del marco. Sin embargo, la configuración inicial del proyecto mediante el marco de trabajo ha sido nula, tal y como estaba previsto.
+
+Cabe destacar que se han encontrado un total de 20 errores en la implementación sin marco, mientras que el marco nos ha evitado todos los errores. Estos errores han sido encontrados una vez he acabado los dos proyectos. He ido revisando todos los casos de prueba y realizándolos manualmente en el proyecto sin marco. El resultado ha sido que ha habido 20 problemas que, utilizando pruebas unitarias he identificado y resuelto con antelación, mientras que sin realizar estas pruebas se me han pasado por alto. El listado de errores concretos se puede encontrar en la tabla \cref{tab:errors}.
+
+En la figura \cref{fig:results-comparison} se puede apreciar la diferencia total de tiempo. El esfuerzo dedicado a obtener código de calidad ha sido del
 
 % Please add the following required packages to your document preamble:
 % \usepackage[table,xcdraw]{xcolor}
@@ -30,3 +34,44 @@ Los resultados del experimento se han recogido en la tabla \cref{tab:results}. D
 \end{tabular}
 \end{adjustbox}
 \end{table}
+
+\begin{table}[]
+\centering
+\caption{Tabla de errores}
+\label{tab:errors}
+\begin{adjustbox}{width=\columnwidth,center}
+\begin{tabular}{rllr}
+\multicolumn{1}{l}{\textbf{ID}} & \textbf{Tarea}                                  & \textbf{Descripción del error}                                                     & \multicolumn{1}{l}{\textbf{Tiempo de resolución (min)}} \\
+1                               & \textbf{Montar el servidor (GraphQL y Express)} & El esquema GraphQL se lee con una codificación no soportada                        & 5                                                       \\
+2                               & \textbf{Montar el servidor (GraphQL y Express)} & Error de CORS                                                                      & 5                                                       \\
+3                               & \textbf{Eliminar tarea}                         & Eliminar tarea que no existe devuelve OK                                           & 15                                                      \\
+4                               & \textbf{Editar tarea}                           & Editar tarea que no existe devuelve OK                                             & 15                                                      \\
+5                               & \textbf{Editar tarea}                           & Editar una tarea marcada (toggled) quita la marca                                  & 5                                                       \\
+6                               & \textbf{Editar tarea}                           & Editar una tarea sin texto devuelve OK                                             & 5                                                       \\
+7                               & \textbf{Editar tarea}                           & Editar una tarea que tiene el texto repetido no funciona                           & 10                                                      \\
+8                               & \textbf{Marcar tarea}                           & Marcar una tarea con el texto repetido a veces no funciona                         & 10                                                      \\
+9                               & \textbf{Obtener lista de tareas}                & Si la lista se acaba de vacíar tras eliminar tarea, devuelve error                 & 30                                                      \\
+10                              & \textbf{Componente de campo de texto}           & Si la API devuelve error, muestra ese error en el campo de texto                   & 5                                                       \\
+11                              & \textbf{Componente de botón de borrar tarea}    & Borrar una tarea recién reordenada borra una tarea distinta                        & 10                                                      \\
+12                              & \textbf{Componente de botón de editar tarea}    & Editar una tarea recién reordenada edita una tarea distinta                        & 10                                                      \\
+13                              & \textbf{Componente de botón de editar tarea}    & Editar una tarea sin cambiar el texto envía un vacío a la API                      & 5                                                       \\
+14                              & \textbf{Componente de tarea}                    & Reordenar una tarea marcada la desmarca                                            & 15                                                      \\
+15                              & \textbf{Componente de tarea}                    & Editar una tarea la cambia de orden                                                & 10                                                      \\
+16                              & \textbf{Componente de tarea}                    & Editar una tarea y no ponerle texto genera un error en consola                     & 5                                                       \\
+17                              & \textbf{Componente de tarea}                    & Marcar y desmarcar una tarea rápidamente la hace desaparecer                       & 45                                                      \\
+18                              & \textbf{Componente de botón de añadir tarea}    & Añadir tarea sin escribir nada en el campo de texto envía una petición al servidor & 5                                                       \\
+19                              & \textbf{Integración con el servidor}            & Inconsistencia de la cache de Apollo con respecto a los datos del servidor         & 30                                                      \\
+20                              & \textbf{Integración con el servidor}            & Error con el tamaño máximo de carga                                                & 10                                                      \\
+\multicolumn{3}{l}{\textbf{Tiempo total (min)}}                                                                                                                        & 250                                                     \\
+\multicolumn{3}{l}{\textbf{Tiempo total (horas)}}                                                                                                                      & 4.166666667
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{results-comparison.png}
+  \caption{Comparación entre el tiempo dedicado con y sin pruebas}
+  \label{fig:results-comparison}
+\end{figure}
+
